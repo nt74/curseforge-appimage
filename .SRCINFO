@@ -1,0 +1,19 @@
+pkgbase = curseforge-appimage
+	pkgdesc = Download and manage your addons, CC and mods with the CurseForge app
+	pkgver = 0.218.1
+	pkgrel = 1
+	url = https://download.curseforge.com/
+	arch = x86_64
+	license = MIT
+	makedepends = unzip
+	depends = fuse2
+	provides = curseforge-appimage=0.218.1
+	conflicts = curseforge-appimage
+	conflicts = curseforge
+	options = !strip
+	source = https://curseforge.overwolf.com/downloads/curseforge-latest-linux.zip
+	source = curseforge.sh
+	sha256sums = fe442d92ba3e2342c9ef945dd5f331c0e647e0c2b131fe6900e11c6ad2a731e1
+	sha256sums = 8385103786e72561c728d14f57ed1010a7d0367984d21cf6cf27e2f9b0cb6f66
+
+pkgname = curseforge-appimage
