@@ -1,7 +1,7 @@
 # Maintainer: Nikos Toutountzoglou <nikos.toutou@gmail.com>
 pkgname=curseforge-appimage
 pkgver=0.218.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Download and manage your addons, CC and mods with the CurseForge app"
 arch=('x86_64')
 url="https://download.curseforge.com/"
@@ -9,10 +9,8 @@ license=('MIT')
 depends=('fuse2')
 provides=("curseforge-appimage=$pkgver")
 conflicts=('curseforge-appimage' 'curseforge')
-source=("$pkgname-$pkgver.zip::https://curseforge.overwolf.com/downloads/curseforge-latest-linux.zip"
-        'curseforge.sh')
-sha256sums=('fe442d92ba3e2342c9ef945dd5f331c0e647e0c2b131fe6900e11c6ad2a731e1'
-            '8385103786e72561c728d14f57ed1010a7d0367984d21cf6cf27e2f9b0cb6f66')
+source=("$pkgname-$pkgver.zip::https://curseforge.overwolf.com/downloads/curseforge-latest-linux.zip")
+sha256sums=('fe442d92ba3e2342c9ef945dd5f331c0e647e0c2b131fe6900e11c6ad2a731e1')
 options=(!strip) # necessary otherwise the AppImage file in the package is truncated
 _image="CurseForge.AppImage"
 
@@ -22,6 +20,10 @@ prepare() {
 	chmod +x "$_image"
 	./"$_image" --appimage-extract
 	sed -i -e "s/AppRun/\/usr\/bin\/curseforge/" "$srcdir/squashfs-root/curseforge.desktop"
+  cat > curseforge.sh <<EOF
+#!/bin/sh
+/opt/curseforge/curseforge.AppImage "\$@"
+EOF
 }
 
 package() {
