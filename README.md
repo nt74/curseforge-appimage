@@ -1,5 +1,5 @@
 # curseforge-appimage
-Download and manage your addons, CC and mods with the CurseForge app
+Download and manage your addons, CC and mods with the CurseForge app. Latest version https://download.curseforge.com/
 
 Arch Linux AUR package using AppImage installer.
 
