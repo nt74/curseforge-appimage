@@ -1,6 +1,6 @@
 # Maintainer: Nikos Toutountzoglou <nikos.toutou@gmail.com>
 pkgname=curseforge-appimage
-pkgver=0.218.1
+pkgver=0.219.2
 pkgrel=2
 pkgdesc="Download and manage your addons, CC and mods with the CurseForge app"
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('fuse2')
 provides=("curseforge-appimage=$pkgver")
 conflicts=('curseforge-appimage' 'curseforge')
 source=("$pkgname-$pkgver.zip::https://curseforge.overwolf.com/downloads/curseforge-latest-linux.zip")
-sha256sums=('fe442d92ba3e2342c9ef945dd5f331c0e647e0c2b131fe6900e11c6ad2a731e1')
+sha256sums=('141ff4166799a31331e951d9fab262876d9f0775d0ad0566838bef1d0d864d13')
 options=(!strip) # necessary otherwise the AppImage file in the package is truncated
 _image="CurseForge.AppImage"
 
